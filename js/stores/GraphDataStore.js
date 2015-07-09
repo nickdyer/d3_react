@@ -7,12 +7,12 @@ var _ = require('underscore');
 
 var _graphdata = {};
 
-function loadProductData(data) {
+function loadGraphData(data) {
   _graphdata = data[0];
 }
 
 // Extend ProductStore with EventEmitter to add eventing capabilities
-var ProductStore = _.extend({}, EventEmitter.prototype, {
+var GraphDataStore = _.extend({}, EventEmitter.prototype, {
 
   // Return Product data
   getGraphData: function() {
@@ -44,8 +44,8 @@ AppDispatcher.register(function(payload) {
   switch(action.actionType) {
 
     // Respond to RECEIVE_DATA action
-    case FluxCartConstants.RECEIVE_DATA:
-      loadProductData(action.data);
+    case D3GraphConstants.RECEIVE_DATA:
+      loadGraphData(action.data);
       break;
 
     default:
@@ -53,11 +53,11 @@ AppDispatcher.register(function(payload) {
   }
 
   // If action was responded to, emit change event
-  ProductStore.emitChange();
+  GraphDataStore.emitChange();
 
   return true;
 
 });
 
-module.exports = ProductStore;
+module.exports = GraphDataStore;
 

@@ -1,1 +1,1 @@
-console.error("Error: Cannot find module '../actions/D3GraphActions' from '/Users/nickbdyer/projects/d3_react/js/utils'")
+console.error("Error: Cannot find module './D3Graph.react' from '/Users/nickbdyer/projects/d3_react/js/components'")
