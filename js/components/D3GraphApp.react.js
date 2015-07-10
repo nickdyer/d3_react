@@ -1,5 +1,5 @@
 var React = require('react');
-var CartStore = require('../stores/GraphDataStore');
+var GraphDataStore = require('../stores/GraphDataStore');
 var D3Graph = require('./D3Graph.react');
 
 // Method to retrieve state from Stores
@@ -26,8 +26,8 @@ var D3GraphApp = React.createClass({
 
   render: function() {
     return (
-      <div className="flux-cart-app">
-        <D3Graph graphdata = {this.state.graphdata} />
+      <div className="d3-canvas-app">
+        <D3Graph graphdata={this.state.graphdata} />
       </div>
     );
   },

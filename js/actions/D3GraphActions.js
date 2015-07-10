@@ -4,7 +4,7 @@ var D3GraphConstants = require('../constants/D3GraphConstants');
 //Define actions object
 var D3GraphActions = {
   // Receive initial product data
-  receiveProduct: function(data) {
+  receiveSurvey: function(data) {
     AppDispatcher.handleAction({
       actionType: D3GraphConstants.RECEIVE_DATA,
       data: data
